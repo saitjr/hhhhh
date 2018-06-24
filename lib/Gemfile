@@ -1,0 +1,4 @@
+source 'https://gems.ruby-china.org'
+
+system("brew install imagemagick")
+gem 'rmagick'
