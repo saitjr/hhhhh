@@ -1,0 +1,17 @@
+GEM
+  remote: https://gems.ruby-china.com/
+  specs:
+    awesome_print (1.8.0)
+    chunky_png (1.3.10)
+    rmagick (2.16.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  awesome_print
+  chunky_png
+  rmagick
+
+BUNDLED WITH
+   1.16.1

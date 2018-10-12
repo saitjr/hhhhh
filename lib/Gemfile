@@ -1,4 +1,6 @@
-source 'https://gems.ruby-china.org'
+source 'https://gems.ruby-china.com'
 
-system("brew install imagemagick")
+# system("brew install imagemagick")
 gem 'rmagick'
+gem 'awesome_print'
+gem 'chunky_png'
