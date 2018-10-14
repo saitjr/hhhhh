@@ -266,7 +266,7 @@ def push(date)
   gitdate = date.strftime("%a %b %d %X %Y %z -0400")
   20.times do
     cmd = "echo '#{Time.now}' > 'tmp';
-      git add .;
+      git add tmp;
       export GIT_AUTHOR_DATE='#{gitdate}';
       export GIT_COMMITTER_DATE='#{gitdate}';
       git commit -m 'update';
@@ -312,15 +312,15 @@ puts "exec git push action after 5s..."
 
 sleep(5)
 
-# (arr.count * arr.first.count).times do |i|
-#   o = arr[i % arr.count][i / arr.count]
-#   if o == 1
-#     push_date = date + i
-#     puts push_date
-#     push(push_date)
-#   end
-# end
+(arr.count * arr.first.count).times do |i|
+  o = arr[i % arr.count][i / arr.count]
+  if o == 1
+    push_date = date + i
+    puts push_date
+    push(push_date)
+  end
+end
 
-# system("git rm tmp")
-# system("git commit -m 'rm'")
-# system("git push")
+system("git rm tmp")
+system("git commit -m 'rm'")
+system("git push")
