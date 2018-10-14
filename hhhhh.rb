@@ -264,7 +264,7 @@ end
 
 def push(date)
   gitdate = date.strftime("%a %b %d %X %Y %z -0400")
-  10.times do
+  20.times do
     cmd = "echo '#{Time.now}' > 'tmp';
       git add .;
       export GIT_AUTHOR_DATE='#{gitdate}';
@@ -278,7 +278,7 @@ end
 
 def s_to_a(str)
   arr = []
-  letters = str.upcase.chars
+  letters = str.upcase.split("-")
   begin
     letters.each do |l|
       arr << Letter.const_get(l).map { |a| a << 0 } # read letter and append a space after 2d array
@@ -312,15 +312,15 @@ puts "exec git push action after 5s..."
 
 sleep(5)
 
-(arr.count * arr.first.count).times do |i|
-  o = arr[i % arr.count][i / arr.count]
-  if o == 1
-    push_date = date + i
-    puts push_date
-    push(push_date)
-  end
-end
+# (arr.count * arr.first.count).times do |i|
+#   o = arr[i % arr.count][i / arr.count]
+#   if o == 1
+#     push_date = date + i
+#     puts push_date
+#     push(push_date)
+#   end
+# end
 
-system("git rm tmp")
-system("git commit -m 'rm'")
-system("git push")
+# system("git rm tmp")
+# system("git commit -m 'rm'")
+# system("git push")
